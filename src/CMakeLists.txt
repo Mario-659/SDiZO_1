@@ -2,7 +2,9 @@ set(BINARY ${CMAKE_PROJECT_NAME})
 
 set(SOURCES
         main.cpp
-        Hello.cpp)
+        DoublyLinkedList.h
+        DoublyLinkedList.cpp
+        )
 
 add_executable(${CMAKE_PROJECT_NAME}_run ${SOURCES})
 

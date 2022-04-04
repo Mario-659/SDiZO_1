@@ -14,7 +14,8 @@ include_directories(${PROJECT_SOURCE_DIR}/src)
 
 set(TEST_SOURCES
         main.cpp
-        HelloTest.cpp)
+        DoublyLinkedListTest.cpp
+        )
 
 add_executable(${CMAKE_PROJECT_NAME}_tst ${TEST_SOURCES})
 
