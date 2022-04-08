@@ -6,6 +6,8 @@ set(SOURCES
         DoublyLinkedList.cpp
         Array.h
         Array.cpp
+        Heap.h
+        Heap.cpp
         )
 
 add_executable(${CMAKE_PROJECT_NAME}_run ${SOURCES})
