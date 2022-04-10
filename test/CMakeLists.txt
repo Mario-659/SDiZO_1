@@ -14,6 +14,8 @@ include_directories(${PROJECT_SOURCE_DIR}/src)
 
 set(TEST_SOURCES
         main.cpp
+        Random.h
+        Random.cpp
         DoublyLinkedListTest.cpp
         ArrayTest.cpp
         HeapTest.cpp

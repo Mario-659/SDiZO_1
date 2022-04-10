@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <vector>
 
+#include "Random.h"
+
 void insertValues(Heap* heap, int* start, int* end){
     int* p = start;
     while(p != end+1){
@@ -97,7 +99,7 @@ TEST(HeapTest, makeRandom){
 
     auto heap = new Heap(500);
     for(int i=0; i<100; i++){
-        int n = distribution(generator);
+        int n = Random::getRandom(0, 500);
         heap->makeRandom(n);
         testHeap(heap);
     }
