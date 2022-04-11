@@ -19,6 +19,7 @@ set(TEST_SOURCES
         DoublyLinkedListTest.cpp
         ArrayTest.cpp
         HeapTest.cpp
+        BSTTest.cpp
         )
 
 add_executable(${CMAKE_PROJECT_NAME}_tst ${TEST_SOURCES})

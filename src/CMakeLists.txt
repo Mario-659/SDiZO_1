@@ -8,6 +8,8 @@ set(SOURCES
         Array.cpp
         Heap.h
         Heap.cpp
+        BST.h
+        BST.cpp
         )
 
 add_executable(${CMAKE_PROJECT_NAME}_run ${SOURCES})
