@@ -101,34 +101,23 @@ int* Heap::getArray() {
 }
 
 void Heap::readFromFile(std::string filename) {
+	delete this->arr;
+	this->currSize = 0;
+
     std::fstream file;
     file.open(filename, std::ios::in);
     if(file.is_open()){
         std::string line;
 
-        // First line as number
+        // Ignore first line
         std::getline(file, line);
         if(line.empty()) return;
-        int size = std::stoi(line);
 
-        // If number of values in file exceeds max size return
-        if(size > this->maxSize) return;
-
-        // Make new array
-        int* tab = new int[this->maxSize];
-
-        // Add values from file to new array, return if missing value
-        for(int i=0; i<size; i++){
+        while(std::getline(file, line)){
             if(line.empty() || line == "\n") return;
             int val = std::stoi(line);
-            tab[i] = val;
-            tab++;
+            push(val);
         }
-
-        delete this->arr;
-        this->currSize = size;
-        this->arr = tab;
-        makeHeap();
     }
 }
 

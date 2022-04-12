@@ -74,6 +74,8 @@ std::string Array::toString(){
 
 void Array::readFromFile(std::string filename) {
     delete array;
+	currSize = 0;
+	array = new int[0];
     std::fstream file;
     file.open(filename, std::ios::in);
     if(file.is_open()){
@@ -86,13 +88,15 @@ void Array::readFromFile(std::string filename) {
         while(std::getline(file, line)){
             if(line.empty() || line == "\n") return;
             int val = std::stoi(line);
-            this->pushFront(val);
+            this->pushBack(val);
         }
     }
 }
 
 void Array::makeRandom(int size) {
     delete array;
+	currSize = 0;
+    array = new int[0];
     std::default_random_engine generator(std::time(0));
     std::uniform_int_distribution<int> distribution(INT_MIN, INT_MAX);
     for(int i=0; i<size; i++){
